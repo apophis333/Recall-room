@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1769aa" />
+    <meta name="description" content="A complete local-first space for learning anything by heart." />
+    <title>Recall Room | Learn by heart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#dashboard" aria-label="Recall Room home"><span class="brand-mark">R</span><span>recall room</span></a>
+        <div class="sidebar-label">Your space</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>Overview</button>
+          <button class="nav-item" data-view="library"><span class="nav-icon">▤</span>Library <span class="nav-count" id="deck-count">0</span></button>
+          <button class="nav-item" data-view="study"><span class="nav-icon">↗</span>Study now <span class="nav-count due-count" id="due-count">0</span></button>
+          <button class="nav-item" data-view="progress"><span class="nav-icon">◒</span>Progress</button>
+          <button class="nav-item" data-view="howto"><span class="nav-icon">?</span>How it works</button>
+          <button class="nav-item" data-view="pricing"><span class="nav-icon">★</span>Everything included</button>
+          <button class="nav-item" data-view="groups"><span class="nav-icon">♧</span>Groups</button>
+        </nav>
+        <div class="sidebar-label">Make something</div>
+        <nav class="main-nav">
+          <button class="nav-item" data-view="editor"><span class="nav-icon">＋</span>New collection</button>
+          <button class="nav-item" id="import-nav"><span class="nav-icon">↓</span>Import notes</button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-tip"><span class="tip-dot"></span><div><strong>Small sessions work.</strong><p>Ten honest minutes beats an ambitious plan.</p></div></div>
+        <button class="nav-item settings-link" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
+        <button class="profile" id="account-button"><div class="avatar">W</div><div><strong id="profile-label">Local workspace</strong><small>Sign in or manage account</small></div><span class="profile-more">•••</span></button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar"><div class="mobile-brand"><span class="brand-mark">R</span>recall room</div><div class="breadcrumb" id="breadcrumb">Overview <span>/</span> Your learning space</div><div class="top-actions"><button class="icon-button" id="theme-toggle" title="Toggle appearance">◐</button><button class="help-button" id="help-button" title="Keyboard shortcuts">?</button></div></header>
+        <div id="app"></div>
+      </main>
+    </div>
+    <input id="file-input" type="file" accept=".json,.txt,.md" hidden />
+    <div id="toast" class="toast" role="status"></div>
+    <div id="modal-root"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
